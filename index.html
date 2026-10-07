@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CampusConnect - College Event Website</title>
+  <meta name="description" content="CampusConnect is the premier college event portal to discover, participate, and connect in cultural fests, tech workshops, sports, and exhibitions.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="brand-logo" aria-label="CampusConnect Home">
+        <div class="brand-icon">CC</div>
+        <span>Campus<span class="accent-text">Connect</span></span>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="events.html" class="nav-link">Events</a></li>
+          <li><a href="register.html" class="nav-link">Register</a></li>
+          <li><a href="login.html" class="nav-link">Login</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12.3 2a10 10 0 0 0-.19 20 10.04 10.04 0 0 0 9.7-7.61 1 1 0 0 0-1.16-1.22 8 8 0 1 1-9.57-9.57 1 1 0 0 0-1.22-1.16A9.93 9.93 0 0 0 12.3 2z"/>
+          </svg>
+        </button>
+
+        <button type="button" class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main>
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <span class="hero-badge">🎓 Official University Events Portal</span>
+            <h1 class="hero-title">
+              Discover. <span class="highlight-blue">Participate.</span> <span class="highlight-orange">Connect.</span>
+            </h1>
+            <p class="hero-subtitle">
+              Your central hub for campus cultural festivals, hackathons, sports championships, and research exhibitions. Stay informed, join student clubs, and make the most of university life.
+            </p>
+            <div class="hero-cta-group">
+              <a href="events.html" class="btn btn-primary btn-lg">Explore Events</a>
+              <a href="register.html" class="btn btn-secondary btn-lg">Register Now</a>
+            </div>
+          </div>
+
+          <div class="hero-image-wrapper">
+            <div class="hero-image-card">
+              <img src="images/hero_campus.jpg" alt="Vibrant university campus life with active students and banners" width="600" height="380">
+            </div>
+            <div class="hero-floating-stat">
+              <div class="floating-icon">🏆</div>
+              <div>
+                <div class="floating-text-num">50+ Events</div>
+                <div class="floating-text-label">Happening This Semester</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section reveal" aria-label="University Event Statistics">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Annual College Events</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">12,000+</div>
+            <div class="stat-label">Active Student Participants</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">35+</div>
+            <div class="stat-label">Registered Student Clubs</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">98%</div>
+            <div class="stat-label">Positive Student Feedback</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Events Section (4 Event Cards) -->
+    <section class="events-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Upcoming Highlights</span>
+          <h2 class="section-title">Featured Campus Events</h2>
+          <p class="section-subtitle">
+            Don't miss the biggest upcoming gatherings. Reserve your spot early to secure your participation pass!
+          </p>
+        </div>
+
+        <div class="events-grid" id="featured-events-grid">
+          <!-- Populated dynamically via script.js (4 cards) -->
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;" class="reveal">
+          <a href="events.html" class="btn btn-outline-blue btn-lg">
+            View All University Events &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Features Section -->
+    <section style="padding: 4rem 0; background: var(--bg-surface); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Why CampusConnect?</span>
+          <h2 class="section-title">Your All-In-One Campus Portal</h2>
+          <p class="section-subtitle">Designed specifically for university students, faculty, and event organizers.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem;">
+          <div style="background: var(--bg-surface-alt); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color);" class="reveal">
+            <div style="font-size: 2rem; color: var(--orange-500); margin-bottom: 1rem;">⚡</div>
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Instant Registration</h3>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">Register for competitions, workshops, and sports in seconds. Receive an instant verifiable digital confirmation pass.</p>
+          </div>
+
+          <div style="background: var(--bg-surface-alt); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color);" class="reveal">
+            <div style="font-size: 2rem; color: var(--blue-500); margin-bottom: 1rem;">🎯</div>
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Tailored Categories</h3>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">Easily filter between cultural galas, technical coding hackathons, athletic tournaments, and science exhibitions.</p>
+          </div>
+
+          <div style="background: var(--bg-surface-alt); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color);" class="reveal">
+            <div style="font-size: 2rem; color: var(--orange-500); margin-bottom: 1rem;">📜</div>
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Verified Participation</h3>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">Earn attendance credits and verified student club certificates that bolster your academic and extracurricular profile.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Quick View Modal -->
+  <div class="modal-overlay" id="event-modal" role="dialog" aria-modal="true" aria-label="Event Details Modal">
+    <div class="modal-dialog">
+      <button type="button" class="modal-close-btn" onclick="closeEventModal()" aria-label="Close dialog">&times;</button>
+      <div class="modal-body" id="modal-content">
+        <!-- Content injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="color: #ffffff;">
+            <div class="brand-icon">CC</div>
+            <span>Campus<span class="accent-text">Connect</span></span>
+          </a>
+          <p>The central university portal for organizing, exploring, and participating in college life events and student activities.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Browse Events</a></li>
+            <li><a href="register.html">Event Registration</a></li>
+            <li><a href="login.html">Student Login</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Event Tracks</h4>
+          <ul class="footer-links">
+            <li><a href="events.html">Cultural Galas</a></li>
+            <li><a href="events.html">Technical Workshops</a></li>
+            <li><a href="events.html">Sports Championships</a></li>
+            <li><a href="events.html">Science Exhibitions</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Campus Contact</h4>
+          <div class="footer-contact-info">
+            <p>📍 University Student Center, Room 204</p>
+            <p>✉️ events@campusconnect.edu</p>
+            <p>📞 +1 (555) 234-5678</p>
+            <p>🕒 Mon - Fri: 9:00 AM - 5:00 PM</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 CampusConnect. Built for University Students. All rights reserved.</div>
+        <div>Modern &bull; Responsive &bull; Accessible</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

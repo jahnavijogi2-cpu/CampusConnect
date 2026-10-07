@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Registration - CampusConnect</title>
+  <meta name="description" content="Register online for upcoming college fests, sports championships, coding hackathons, and exhibitions at CampusConnect.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="brand-logo" aria-label="CampusConnect Home">
+        <div class="brand-icon">CC</div>
+        <span>Campus<span class="accent-text">Connect</span></span>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="events.html" class="nav-link">Events</a></li>
+          <li><a href="register.html" class="nav-link active">Register</a></li>
+          <li><a href="login.html" class="nav-link">Login</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12.3 2a10 10 0 0 0-.19 20 10.04 10.04 0 0 0 9.7-7.61 1 1 0 0 0-1.16-1.22 8 8 0 1 1-9.57-9.57 1 1 0 0 0-1.22-1.16A9.93 9.93 0 0 0 12.3 2z"/>
+          </svg>
+        </button>
+
+        <button type="button" class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Register Form Main Section -->
+  <main class="auth-page-section">
+    <div class="container">
+      <div class="auth-card auth-card-wide reveal">
+        <!-- Form Header -->
+        <div class="auth-header">
+          <span class="section-tag">Student Enrollment</span>
+          <h1>Event Registration</h1>
+          <p>Complete this form to reserve your seat and receive your digital participation pass</p>
+        </div>
+
+        <!-- Alert Notification Box -->
+        <div class="alert-box" id="reg-alert" role="alert"></div>
+
+        <!-- Dynamic Success Confirmation Receipt (Shown via JS upon submission) -->
+        <div class="registration-success-card" id="registration-receipt-card" role="region" aria-live="polite">
+          <!-- Filled dynamically by script.js -->
+        </div>
+
+        <!-- Registration Form -->
+        <form id="register-form" class="auth-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="reg-name" class="form-label">Full Name *</label>
+              <input 
+                type="text" 
+                id="reg-name" 
+                class="form-control" 
+                placeholder="e.g., Alex Johnson" 
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="reg-email" class="form-label">College Email Address *</label>
+              <input 
+                type="email" 
+                id="reg-email" 
+                class="form-control" 
+                placeholder="e.g., alex.johnson@campus.edu" 
+                required
+              >
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="reg-studentid" class="form-label">Student ID / Roll No. *</label>
+              <input 
+                type="text" 
+                id="reg-studentid" 
+                class="form-control" 
+                placeholder="e.g., STU2024-892" 
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="reg-phone" class="form-label">Phone Number *</label>
+              <input 
+                type="tel" 
+                id="reg-phone" 
+                class="form-control" 
+                placeholder="e.g., +1 (555) 019-2834" 
+                required
+              >
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="reg-dept" class="form-label">Academic Department *</label>
+              <select id="reg-dept" class="form-control" required>
+                <option value="">-- Select Department --</option>
+                <option value="Computer Science & Engineering">Computer Science & Engineering</option>
+                <option value="Electronics & Communication">Electronics & Communication</option>
+                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                <option value="Civil & Environmental Eng.">Civil & Environmental Eng.</option>
+                <option value="Business Administration & MBA">Business Administration & MBA</option>
+                <option value="Biotechnology & Life Sciences">Biotechnology & Life Sciences</option>
+                <option value="Arts, Design & Media">Arts, Design & Media</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="reg-year" class="form-label">Academic Year *</label>
+              <select id="reg-year" class="form-control" required>
+                <option value="">-- Select Year --</option>
+                <option value="1st Year (Freshman)">1st Year (Freshman)</option>
+                <option value="2nd Year (Sophomore)">2nd Year (Sophomore)</option>
+                <option value="3rd Year (Junior)">3rd Year (Junior)</option>
+                <option value="4th Year (Senior)">4th Year (Senior)</option>
+                <option value="Postgraduate / Master's">Postgraduate / Master's</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="reg-event" class="form-label">Select Event to Attend *</label>
+            <select id="reg-event" class="form-control" required>
+              <option value="">-- Loading University Events... --</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 0.5rem;">
+            Confirm & Complete Registration
+          </button>
+
+          <p style="text-align: center; font-size: 0.85rem; color: var(--text-muted);">
+            By registering, you agree to university event code of conduct and safety regulations.
+          </p>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="color: #ffffff;">
+            <div class="brand-icon">CC</div>
+            <span>Campus<span class="accent-text">Connect</span></span>
+          </a>
+          <p>The central university portal for organizing, exploring, and participating in college life events and student activities.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Browse Events</a></li>
+            <li><a href="register.html">Event Registration</a></li>
+            <li><a href="login.html">Student Login</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Event Tracks</h4>
+          <ul class="footer-links">
+            <li><a href="events.html">Cultural Galas</a></li>
+            <li><a href="events.html">Technical Workshops</a></li>
+            <li><a href="events.html">Sports Championships</a></li>
+            <li><a href="events.html">Science Exhibitions</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Campus Contact</h4>
+          <div class="footer-contact-info">
+            <p>📍 University Student Center, Room 204</p>
+            <p>✉️ events@campusconnect.edu</p>
+            <p>📞 +1 (555) 234-5678</p>
+            <p>🕒 Mon - Fri: 9:00 AM - 5:00 PM</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 CampusConnect. Built for University Students. All rights reserved.</div>
+        <div>Modern &bull; Responsive &bull; Accessible</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
